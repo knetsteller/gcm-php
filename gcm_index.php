@@ -1,14 +1,30 @@
 ﻿<html>
 	
 	<head>
+
 		<title>Servidor GCM</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+			<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+			<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+			
+			<link rel="stylesheet" href="includes/css/styles.css">
+			
+			<link rel="stylesheet" href="css/main.css">
+			
+			<script src="includes/js/modernizr-2.6.2.min.js"></script>	
+
+			<link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet"></link>
 	</head>
 	
 	<body>
-		
-		<h1>
-			Servidor GCM
-		</h1>
+	
+		<div class="center-block">
+		<div class="container text-center">
+			<h1 id="titulo">
+				Painel de Mensagens
+			</h1>
+		</div>
 		<?php
 		
 			if(isset($_POST['submit'])){
@@ -64,14 +80,17 @@
 			
 			// Fecha conexão
 			curl_close($ch);
-			echo $result;
+			
 			}
 		?>
 	
-		<form method="post" action="gcm_index.php">
-			<label>Sua Mensagem: </label><input type="text" name="message" />		 
-			<input type="submit" name="submit" value="Enviar" />
-		</form>
+		<div class="container text-center">
+			<form method="post" action="gcm_index.php">				
+				<textarea name="message" class="text" cols=40 rows=6 placeholder="Escreva sua Mensagem"></textarea> 
+				<input type="submit" name="submit" class="btn btn-default" value="Enviar" />
+			</form>
+		</div>
+		</div>
 		
 	</body>
 	
